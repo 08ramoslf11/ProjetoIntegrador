@@ -1,19 +1,29 @@
 import Produto from "@/components/Produto";
+import axios from "axios";
+import { useState } from "react";
+
 
 export default function Home() {
+
+  const [listaProduto, setListaProduto] = useState([])
+  axios.get('https://localhost:7111/api/Produto/ListaAsync')
+    .then(resp => setListaProduto(resp.data))
   return (
-   <Produto>
-     <div className="Tenis">
-            <div className="Jordan">
-            <Image src={"/assets/Air-Jordan-4.png"} width={250} height={150} />
-            </div>
-            <div className="spawn">
-                <Image src={"/assets/spawn-3.png"} width={250} height={200} />
-            </div>
-            <div className="kobe">
-                <Image src={"/assets/kobe-5.png"} width={250} height={150} />
-            </div>
-        </div>
-   </Produto>
+    <div className="container-fluid">
+      <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      {
+        listaProduto.map((dado, index) => <Produto
+        key={index}
+        nome={dado.nome} 
+        descricao={dado.descricao} 
+        disponivel={dado.disponivel}
+        novidade={dado.novidade} 
+        preco={dado.preco}
+        />)
+      }
+
+        
+      </div>
+    </div>
   );
 }
