@@ -9,7 +9,7 @@ export default function Produto(props) {
                     <Image src={"/assets/Air-Jordan-4.png"} width={250} height={150} />.
                     <h2>{props.nome}</h2>
                     <p>{props.descricao}</p>
-                    <div className="d-flex justify-content-between align-items-center">:
+                    <div className="d-flex justify-content-between align-items-center">
                         {
                             props.disponivel == false
                                 ? <span className="badge text-bg-secondary">Indisponivel</span>
