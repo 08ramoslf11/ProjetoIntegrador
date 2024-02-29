@@ -16,12 +16,13 @@ export default function Home() {
   return (
     <div>
       <Menu/>
-      <div className="container-fluid">
+      <div className="container-fluid mt-3">
         <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
           {
             listaProduto.map((dado, index) => <Produto
               key={index}
               nome={dado.nome}
+              imagem={dado.imagem}
               descricao={dado.descricao}
               disponivel={dado.disponivel}
               novidade={dado.novidade}
