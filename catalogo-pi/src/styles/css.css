@@ -3,6 +3,12 @@ text-decoration: none;
 color: white;
 
 }
+.margininferior{
+    margin-bottom: 30px;
+}
+.marginsuperior{
+    margin-top: 70px;
+}
 .insta {
 text-decoration: none;
 }
@@ -27,4 +33,18 @@ text-decoration: none;
     left: 0;
     right: 0;
     z-index: 99999 !important;
+}
+
+.footer{
+    text-align: center !important;
+    position: fixed !important;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99999 !important;
+    color: black !important;
+}
+.Cadastro{
+    text-decoration: none ;
+    color: white;
 }

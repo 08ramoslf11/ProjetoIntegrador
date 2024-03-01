@@ -2,6 +2,7 @@ import Produto from "@/components/Produto";
 import Menu from "@/components/Menu";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Footer from "@/components/Footer";
 
 
 export default function Home() {
@@ -14,9 +15,9 @@ export default function Home() {
       )
   }, [])
   return (
-    <div>
-      <Menu/>
-      <div className="container-fluid mt-3">
+    <div className="marginsuperior">
+      <Menu />
+      <div className=" container-fluid mt-3">
         <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
           {
             listaProduto.map((dado, index) => <Produto
@@ -29,10 +30,13 @@ export default function Home() {
               preco={dado.preco}
             />)
           }
-
+                <div className="margininferior">
+                  <Footer/>
+                </div>
 
         </div>
       </div>
+          
     </div>
   );
 }
