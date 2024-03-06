@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
+import ItemPedido from "./ItemPedido";
 
-export default function Menu() {
-
+export default function Menu(props) {
+     console.log('menu',props.listaPedido)
 
 
     return (
@@ -19,14 +20,14 @@ export default function Menu() {
                 </h4>
             </Link>
             <a className="insta" href="https://www.instagram.com/ramoslf.11/">
-                <Image src={"/assets/insta.png"} width={35} height={35} />
+                <Image alt="" src={"/assets/insta.png"} width={35} height={35} />
             </a>
             <div >
                 <input type="text" className="form-control input"></input>
                 <button className="ms-2">Busca</button>
             </div>
             <button className="carrinho me-4" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-                <Image src={"/assets/carrinho.png"} width={35} height={35} />
+                <Image alt="" src={"/assets/carrinho.png"} width={35} height={35} />
             </button>
 
             <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
@@ -36,7 +37,14 @@ export default function Menu() {
                 </div>
                 <div className="offcanvas-body">
                     <div>
-                        {/*script sera chamado e vai puxar informações*/}
+                    {
+                props.listaPedido.map((dado, index) => <ItemPedido
+                key={index}
+                nome={dado.nome}
+                imagem={dado.imagem}
+                preco={dado.preco} 
+              />)
+            }
                     </div>
                     <div className="dropdown text-center">
                         <button className="btn btn-secondary " type="button" data-bs-toggle="dropdown">

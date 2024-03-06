@@ -8,7 +8,8 @@ import Footer from "@/components/Footer";
 export default function Home() {
 
   const [listaProduto, setListaProduto] = useState([])
-
+  const [listaPedido, setListaPedido] = useState([])
+console.log("index",listaPedido)
   useEffect(() => {
     axios.get('https://localhost:7111/api/Produto/ListaAsync')
       .then(resp => setListaProduto(resp.data)
@@ -17,7 +18,7 @@ export default function Home() {
   return (
     
     <div className="marginsuperior">
-        <Menu />
+        <Menu listaPedido={listaPedido}/>
         <div className=" container-fluid mt-3">
           <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
             {
@@ -28,7 +29,7 @@ export default function Home() {
                 descricao={dado.descricao}
                 disponivel={dado.disponivel}
                 novidade={dado.novidade}
-                preco={dado.preco}
+                preco={dado.preco} addItemPedido={setListaPedido} listaPedido={listaPedido}
               />)
             }
             <div className="margininferior">
