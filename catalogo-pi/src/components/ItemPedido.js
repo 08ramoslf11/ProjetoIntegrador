@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function ItemPedido(props) {
 
     return (
-        <div className="Pedidocompra">
+        <div className="FinalizarPedidocompra">
             <div className="card shadow-sm h-100">
                 <div className="text-center card-body">
                     <img alt="" src={props.imagem} width={"auto"} height={200} className="larguraImg" />.

@@ -41,7 +41,7 @@ text-decoration: none;
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 99999 !important;
+    z-index: 100 !important;
     color: black !important;
 }
 .Cadastro{
@@ -60,4 +60,8 @@ text-decoration: none;
 .finalizar{
     margin-top: 15px;
   
+}
+
+.FinalizarPedidocompra{
+    padding-bottom: 7px;
 }
