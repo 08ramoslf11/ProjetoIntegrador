@@ -38,7 +38,6 @@ export default function cadastro() {
 
         setdadosProduto(dadosProduto)
 
-        console.log(dadosProduto)
     }
     return (
         <div className="Cadastropage">

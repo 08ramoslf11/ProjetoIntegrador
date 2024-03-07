@@ -3,7 +3,7 @@ import Link from "next/link";
 import ItemPedido from "./ItemPedido";
 
 export default function Menu(props) {
-     console.log('menu',props.listaPedido)
+
 
 
     return (
@@ -23,8 +23,12 @@ export default function Menu(props) {
                 <Image alt="" src={"/assets/insta.png"} width={35} height={35} />
             </a>
             <div >
-                <input type="text" className="form-control input"></input>
-                <button className="ms-2">Busca</button>
+                <input
+                    className="input form-control me-2"
+                    type="search"
+                    placeholder="Pesquisa"
+                    onChange={props.pesquisar}
+                />
             </div>
             <button className="carrinho me-4" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
                 <Image alt="" src={"/assets/carrinho.png"} width={35} height={35} />
@@ -37,17 +41,20 @@ export default function Menu(props) {
                 </div>
                 <div className="offcanvas-body">
                     <div>
-                    {
-                props.listaPedido.map((dado, index) => <ItemPedido
-                key={index}
-                nome={dado.nome}
-                imagem={dado.imagem}
-                preco={dado.preco} 
-              />)
-            }
+                        {
+                            props.listaPedido.map((dado, index) => <ItemPedido
+                                key={index}
+                                index={index}
+                                id={dado.id}
+                                nome={dado.nome}
+                                imagem={dado.imagem}
+                                preco={dado.preco}
+                                removerItemDoCarrinho = {props.removerItemDoCarrinho} 
+                            />)
+                        }
                     </div>
                     <div className="dropdown text-center">
-                        <button className="btn btn-secondary " type="button" data-bs-toggle="dropdown">
+                        <button className="finalizar btn-secondary " type="button" data-bs-toggle="dropdown">
                             Finalizar pedido
                         </button>
 

@@ -8,7 +8,6 @@ export default function Produto(props) {
 
     //     )
     // }           
-    console.log("produto", props)
 
     return (
 
@@ -41,6 +40,9 @@ export default function Produto(props) {
                 <div className="text-center card-footer">
                     <button onClick={() => {
                        const novoPedido = {
+                        key: props.key,
+                        index: props.index,
+                        id: props.id,
                         imagem: props.imagem,
                         nome: props.nome,
                         preco: props.preco,
