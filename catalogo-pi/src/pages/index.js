@@ -35,7 +35,7 @@ export default function Home() {
       <Menu pesquisar={handlePesquisa} listaPedido={listaPedido} removerItemDoCarrinho={removerItemDoCarrinho} />
       <div className=" container-fluid mt-3">
         <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-          {ListaProdutoFiltrado.map((dado, index) =>
+          {ListaProdutoFiltrado.map((dado, index) => (
             <Produto
               key={index}
               index={index}
@@ -47,7 +47,7 @@ export default function Home() {
               novidade={dado.novidade}
               preco={dado.preco}
               addItemPedido={setListaPedido} listaPedido={listaPedido}
-            />)
+            />))
           }
           <div className="margininferior">
             <Footer />

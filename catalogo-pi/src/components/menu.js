@@ -14,11 +14,13 @@ export default function Menu(props) {
                     Menu
                 </h4>
             </Link>
-            <Link className="Cadastro ms-4" href={"/cadastro"}>
-                <h4>
-                    Cadastro
-                </h4>
-            </Link>
+            <div>
+                <Link className="Cadastro ms-4" href={"/cadastro"}>
+                    <h4>
+                        Cadastro
+                    </h4>
+                </Link>
+            </div>
             <a className="insta" href="https://www.instagram.com/ramoslf.11/">
                 <Image alt="" src={"/assets/insta.png"} width={35} height={35} />
             </a>
@@ -42,15 +44,17 @@ export default function Menu(props) {
                 <div className="offcanvas-body">
                     <div>
                         {
-                            props.listaPedido.map((dado, index) => <ItemPedido
+                            props.listaPedido?.map((dado, index) =>
+                            (<ItemPedido
                                 key={index}
                                 index={index}
                                 id={dado.id}
                                 nome={dado.nome}
                                 imagem={dado.imagem}
                                 preco={dado.preco}
-                                removerItemDoCarrinho = {props.removerItemDoCarrinho} 
-                            />)
+                                removerItemDoCarrinho={props.removerItemDoCarrinho}
+
+                            />))
                         }
                     </div>
                     <div className="dropdown text-center">
@@ -62,6 +66,5 @@ export default function Menu(props) {
                 </div>
             </div>
         </nav>
-
     )
 }
